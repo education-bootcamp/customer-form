@@ -1,3 +1,6 @@
+<%@ page import="com.app.controller.CustomerController" %>
+<%@ page import="com.app.entity.Customer" %>
+<%@ page import="java.util.List" %>
 <html>
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -18,11 +21,15 @@
                 </tr>
                 </thead>
                 <tbody>
+                <%
+                    List<Customer> allCustomers = new CustomerController().findAllCustomers();
+                    for(Customer c:  allCustomers){
+                %>
                 <tr>
-                    <td>1001</td>
-                    <td>Nimal</td>
-                    <td>Colombo</td>
-                    <td>25000</td>
+                    <td><%=c.getId()%></td>
+                    <td><%=c.getName()%></td>
+                    <td><%=c.getAddress()%></td>
+                    <td><%=c.getSalary()%></td>
                     <td>
                         <button class="btn btn-danger">Delete</button>
                     </td>
@@ -30,6 +37,9 @@
                         <button class="btn btn-success">Update</button>
                     </td>
                 </tr>
+                <%
+                    }
+                %>
                 </tbody>
             </table>
         </div>

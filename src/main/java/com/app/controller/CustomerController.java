@@ -26,6 +26,8 @@ public class CustomerController {
         return null;
     }
     public List<Customer> findAllCustomers(){
-        return null;
+            try(Session session = new HibernateUtil().getSession()) {
+                return session.createQuery("FROM Customer", Customer.class).list();
+            }
     }
 }
