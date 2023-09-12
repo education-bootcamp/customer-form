@@ -31,10 +31,10 @@
                     <td><%=c.getAddress()%></td>
                     <td><%=c.getSalary()%></td>
                     <td>
-                        <button class="btn btn-danger">Delete</button>
+                        <a class="btn btn-danger">Delete</a>
                     </td>
                     <td>
-                        <button class="btn btn-success">Update</button>
+                        <a class="btn btn-success" href="edit_customer.jsp?id=<%=c.getId()%>" target="_blank">Update</a>
                     </td>
                 </tr>
                 <%

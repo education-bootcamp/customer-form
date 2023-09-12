@@ -23,7 +23,9 @@ public class CustomerController {
         return false;
     }
     public Customer findCustomer(long id){
-        return null;
+        try (Session session = HibernateUtil.getSession()) {
+            return session.get(Customer.class, id);
+        }
     }
     public List<Customer> findAllCustomers(){
             try(Session session = new HibernateUtil().getSession()) {
