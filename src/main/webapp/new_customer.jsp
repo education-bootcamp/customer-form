@@ -12,7 +12,7 @@
 </head>
 <body>
 <%@include file="header.jsp"%>
-<form action="">
+<form action="/save">
 <div  class="container p-4">
     <div class="row">
          <div class="col-3">
