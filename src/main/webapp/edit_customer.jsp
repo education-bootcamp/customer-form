@@ -19,7 +19,7 @@
     Customer customer = new CustomerController().findCustomer(id);
 %>
 
-<form action="/save" method="">
+<form action="/update" method="post">
     <div class="container p-4">
         <div class="row">
             <div class="col-3">

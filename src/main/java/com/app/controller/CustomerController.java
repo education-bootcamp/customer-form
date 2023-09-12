@@ -17,7 +17,17 @@ public class CustomerController {
         return true;
     }
     public boolean updateCustomer(Customer customer){
-        return false;
+        try (Session session = HibernateUtil.getSession()) {
+            Transaction transaction = session.beginTransaction();
+            Customer selectedCustomer = session.get(Customer.class, customer.getId());
+            if (selectedCustomer == null) return false;
+            selectedCustomer.setSalary(customer.getSalary());
+            selectedCustomer.setName(customer.getName());
+            selectedCustomer.setAddress(customer.getAddress());
+            selectedCustomer.setSalary(customer.getSalary());
+            transaction.commit();
+        }
+        return true;
     }
     public boolean deleteCustomer(long id){
         return false;
