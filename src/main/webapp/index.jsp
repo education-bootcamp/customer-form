@@ -18,6 +18,7 @@
                     <th>Name</th>
                     <th>Address</th>
                     <th>Salary</th>
+                    <tr>Option</tr>
                 </tr>
                 </thead>
                 <tbody>
@@ -31,9 +32,7 @@
                     <td><%=c.getAddress()%></td>
                     <td><%=c.getSalary()%></td>
                     <td>
-                        <a class="btn btn-danger">Delete</a>
-                    </td>
-                    <td>
+                        <a class="btn btn-danger" href="delete_customer.jsp?id=<%=c.getId()%>">Delete</a> |
                         <a class="btn btn-success" href="edit_customer.jsp?id=<%=c.getId()%>" target="_blank">Update</a>
                     </td>
                 </tr>
